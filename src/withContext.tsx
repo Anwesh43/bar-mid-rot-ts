@@ -5,7 +5,7 @@ const withContext = (MainComponent : React.FC<any>) : React.FC<any> => {
     return (props : any) => {
         const {w, h} = useDimension()
         const {scale, start : cb} = useAnimatedScale()
-        const newProps = {...props}
+        const newProps = {...props, w, h, scale, cb}
         return (
             <MainComponent {...newProps}/>
         )
